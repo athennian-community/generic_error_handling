@@ -1,4 +1,4 @@
-#_generic_error_handler
+#generic_error_handler
 
 ## Purpose
 
