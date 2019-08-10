@@ -1,5 +1,5 @@
-# generic_error_handler
+# Hey Listen! Error Handling and Logging tool
 
 ## Purpose
 
-Simple functional error handler designed to be forked for less general purpose application.
+Simple functional error handler that has some tools to help ng devs debug and build faster
