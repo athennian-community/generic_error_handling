@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-us" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hey Listen!</title>
+</head>
+<body data-ng-app="app">
+    <div ng-controller="exampleCtrl">
+        <button ng-click="testError()"> Test Error! </button>
+        <header> Hey Listen! </header>
+
+    </div>
+
+<!-- services -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js" integrity="sha384-V6/dyDFv85/V/Ktq3ez5B80/c9ZY7jV9c/319rqwNOz3h9CIPdd2Eve0UQBYMMr/" crossorigin="anonymous"></script>
+<!-- toastr -->
+<script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css" />
+<script type="text/javascript" src='ng.app.module.js'></script>
+<script type="text/javascript" src='ng.services.module.js'></script>
+<script type="text/javascript" src='ng.logger.service.js'></script>
+<script type="text/javascript" src='ng.error_handling.service.js'></script>
+<script type="text/javascript" src='ng.error_code.constants.js'></script>
+<script type="text/javascript" src="ng.user_messages.constants.js"></script>
+<!-- start ng -->
+<script>
+(function(){
+    
+    angular.module('app')
+    .controller('exampleCtrl', exampleCtrl)
+    exampleCtrl.$inject = ['$scope', 'toastr', 'ErrorHandler', 'HeyListen']
+    function exampleCtrl($scope, toastr, ErrorHandler, HeyListen){
+        const heyError = ErrorHandler('exampleCtrl')
+        const {heyListen: log, tell} = HeyListen('exampleCtrl').log
+
+        $scope.testError = testError
+        $scope.testWarn = testWarn
+        $scope.testNotify = testNotify
+        $scope.testSuccess = testSuccess
+
+        function testError() {
+            heyError.error('Error Message!')
+        }
+        function testWarn() {
+            heyError.warn('Warning Message!')
+        }
+        function testNotify() {
+            tell('Notified', 'info')
+        }
+        function testSuccess() {
+            tell('Success!', 'success')
+        }
+    }
+
+})()
+</script>
+
+<!-- angularJS -->
+
+</body>
+</html>

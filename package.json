@@ -1,0 +1,22 @@
+{
+  "name": "ng-hey-listen",
+  "version": "1.0.0",
+  "description": "angularJS error and logging helper",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/athennian-community/ngHeyListen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/athennian-community/ngHeyListen/issues"
+  },
+  "homepage": "https://github.com/athennian-community/ngHeyListen#readme",
+  "dependencies": {
+    "angular-toastr": "^2.1.1"
+  }
+}
