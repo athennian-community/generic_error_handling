@@ -8,8 +8,11 @@
 </head>
 <body data-ng-app="app">
     <div ng-controller="exampleCtrl">
-        <button ng-click="testError()"> Test Error! </button>
         <header> Hey Listen! </header>
+        <button ng-click="testError()"> Test Error! </button>
+        <button ng-click="testSuccess()"> Test Success! </button>
+        <button ng-click="testWarn()"> Test Warning! </button>
+        <button ng-click="testNotify()"> Test Notify! </button>
 
     </div>
 
@@ -19,42 +22,15 @@
 <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
 <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css" />
 <script type="text/javascript" src='ng.app.module.js'></script>
-<script type="text/javascript" src='ng.services.module.js'></script>
-<script type="text/javascript" src='ng.logger.service.js'></script>
-<script type="text/javascript" src='ng.error_handling.service.js'></script>
-<script type="text/javascript" src='ng.error_code.constants.js'></script>
-<script type="text/javascript" src="ng.user_messages.constants.js"></script>
+<script type="text/javascript" src='ng.example.controller.js'></script>
+<script type="text/javascript" src='services/ng.services.module.js'></script>
+<script type="text/javascript" src='services/ng.logger.service.js'></script>
+<script type="text/javascript" src='services/ng.error_handling.service.js'></script>
+<script type="text/javascript" src='util/ng.error_code.constants.js'></script>
+<script type="text/javascript" src="util/ng.user_messages.constants.js"></script>
 <!-- start ng -->
 <script>
-(function(){
-    
-    angular.module('app')
-    .controller('exampleCtrl', exampleCtrl)
-    exampleCtrl.$inject = ['$scope', 'toastr', 'ErrorHandler', 'HeyListen']
-    function exampleCtrl($scope, toastr, ErrorHandler, HeyListen){
-        const heyError = ErrorHandler('exampleCtrl')
-        const {heyListen: log, tell} = HeyListen('exampleCtrl').log
 
-        $scope.testError = testError
-        $scope.testWarn = testWarn
-        $scope.testNotify = testNotify
-        $scope.testSuccess = testSuccess
-
-        function testError() {
-            heyError.error('Error Message!')
-        }
-        function testWarn() {
-            heyError.warn('Warning Message!')
-        }
-        function testNotify() {
-            tell('Notified', 'info')
-        }
-        function testSuccess() {
-            tell('Success!', 'success')
-        }
-    }
-
-})()
 </script>
 
 <!-- angularJS -->

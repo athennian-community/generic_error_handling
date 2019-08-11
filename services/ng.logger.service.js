@@ -5,7 +5,6 @@
         HeyListen.$inject = ['toastr']
 
         function HeyListen(toastr) {
-
             return init
 
             function tell(userMsg, success, toastConfig) {
@@ -27,15 +26,12 @@
 
             function init(nameSpace) {
                 return {
-
                     tell,
-
                     log(msg, type="info", subNameSpace) {
                         if(!nameSpace) nameSpace = angular.copy(subNameSpace)
                         console.log('%c' + ' ' + nameSpace + ': ',
                                     getClass(type),
                                     msg)
-
                     }
                 }
             }

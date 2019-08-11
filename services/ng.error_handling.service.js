@@ -2,11 +2,9 @@
     angular.module('app')
     .factory('ErrorHandler', ErrorHandler)
     ErrorHandler.$inject = ['toastr', '$http', 'HeyListen', 'USERMSG', 'ERRCODE']
-    console.log('here')
     function ErrorHandler(toastr, $http, HeyListen, USERMSG, ERRCODE) {
         const errLog = HeyListen('ErrHandler').log
         const log= HeyListen().log
-        console.log('errorHandler', 'in')
         return ErrorHandler
 
         function sendErrorLog(err) {
