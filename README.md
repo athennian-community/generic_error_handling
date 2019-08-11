@@ -54,4 +54,4 @@ Quickly throw warnings or errors, or configure.
 
 #### See it do things
 
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+![Alt Text](https://github.com/athennian-community/ngHeyListen/blob/master/assets/errors.gif)
